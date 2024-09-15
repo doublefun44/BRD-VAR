@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAR Side</title>
+    <style>
+        
+      body {
+          background-color: rgb(228, 207, 140);
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: 200px 220px 200px 220px 200px 200px 200px 180px 180px 180px 180px;
+        
+  /* display: flex; */
+  }
+
+.snDate {
+  flex:1;
+  gap:15px;
+  font-size:20px;
+  text-align: center;
+  border: 20px bold green;
+}
+
+.sn-title {
+  font-weight: bold;
+}
+
+.btn {
+  height: 30px;
+  background-color: orange;
+}
+
+
+       </style>
+</head>
+<body>
+  
+
+
+<hr />
+<h1>Display on VAR side</h1>
+
+    <div class="grid-container sn-title">
+      <div class="snDate"><label>Project Name</label></div>
+      <div class="snDate"><label>Requested Delivery Date</label></div>
+      <div class="snDate"><label>VAR committed ship date</label></div>
+      <div class="snDate"><label>VAR committed delivery date</label></div>
+      <div class="snDate"><label>VAR revised ship date</label></div>
+      <div class="snDate"><label>VAR revised delivery date</label></div>
+      <div class="snDate"><label>VAR revised Reason</label></div>
+      <div class="snDate"><label>     </label></div>
+      <div class="snDate"><label>Carrier</label></div>
+      <div class="snDate"><label>tracking</label></div>
+      <div class="snDate"><label>Due Date</label></div>
+    </div>
+    
+    <!-- new code added on 9/14 for form part -->
+    <form action="/submit" method="POST">
+    <div class="grid-container">
+      <div class="snDate"><label> <% if (locals.pName) {%>
+        <p><%= pName %></p>
+    <% } else { %>
+        <p>   </p>
+    <% } %></label></div>
+      <div class="snDate"><label><% if (locals.rDate) {%>
+        <p><%= rDate %></p>
+    <% } else { %>
+        <p>   </p>
+    <% } %></label></div>
+   
+      <div class="snDate"><input type="date" name="commitship"></div>
+      <div class="snDate"><input type="date" name="commitdeliver"></div>
+      <div class="snDate"><input type="date" name="reviseship"></div>
+      <div class="snDate"><input type="date" name="revisedeliver"></div>
+      <div class="snDate"><input type="text" name="reasonOfVar" placeholder="reasons to change date"></div>
+      <input class="btn" type="submit" value="send to SN">
+    
+      <div class="snDate"><input type="text" name="carrier" placeholder="carrier"></div>
+      <div class="snDate"><input type="text" name="tracking" placeholder="tracking number"></div>
+      <div class="snDate"><label><% if (locals.rDate) {%>
+        <p><%= rDate %></p>
+    <% } else { %>
+        <p>   </p>
+    <% } %></label></div>
+    </div>
+  </form>
+</body>
+</html>

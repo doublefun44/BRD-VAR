@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCPR Dates</title>
+ <style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 200px 180px 100px 200px 200px 200px 200px 200px 180px 180px 180px auto;
+  /* display: flex; */
+}
+
+.snDate {
+  flex:1;
+  gap:10px;
+  font-size:20px;
+  text-align: center;
+}
+
+.sn-title {
+  font-weight: bold;
+}
+
+body {
+    background-color: rgb(217, 235, 214);
+}
+
+.btn {
+  height: 30px;
+}
+
+ </style>
+
+</head>
+<body>
+    <h1>Layout in ServiceNow Side</h1>
+
+<hr />
+<div class="grid-container sn-title">
+  <div class="snDate"><label>Project Name</label></div>
+  <div class="snDate"><label>Requested Delivery Date</label></div>
+  <div class="snDate"><label> </label></div>
+  <div class="snDate"><label>Reason for Requested Date</label></div>
+  <div class="snDate"><label>VAR committed ship date</label></div>
+  <div class="snDate"><label>VAR committed delivery date</label></div>
+  <div class="snDate"><label>VAR revised ship date</label></div>
+  <div class="snDate"><label>VAR revised delivery date</label></div>
+  <div class="snDate"><label>VAR revised Reason</label></div>
+  <div class="snDate"><label>Carrier</label></div>
+  <div class="snDate"><label>tracking</label></div>
+  <div class="snDate"><label>Due Date</label></div>
+</div>
+
+
+<form action="/post" method="POST">
+<div class="grid-container">
+  <div class="snDate"><input type="text" name="projectName" placeholder="Project Name"></div>
+  <div class="snDate"><input type="date" name="requestDate"></div>
+  <input class="btn" type="submit" value="submit to RFQ">
+  <div class="snDate"><label>display on SN side only</label></div>
+  <div class="snDate"><label>    -   </label></div>
+  <div class="snDate"><label>    -   </label></div>
+  <div class="snDate"><label>    -   </label></div>
+  <div class="snDate"><label>    -   </label></div>
+  <div class="snDate"><label>    -    </label></div>
+  <div class="snDate"><label>    -    </label></div>
+  <div class="snDate"><label>    -     </label></div>
+  <div class="snDate"><label>    -     </label></div>
+</div>
+</form>
+   
+</html>
